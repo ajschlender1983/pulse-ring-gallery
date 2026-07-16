@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pulse — Ring &amp; Ripple Design Standard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+<style>
+  :root{ --void:#0b0c0f; --panel:#141519; --line:#262832; --cream:#EBE7D4; --warm:#F9F6E5; --lime:#E3F47D;
+    --gold:#d9b45e; --muted:#8f8b7e; --ok:#8fd28f; --no:#e0a08f; --font:"DM Sans",sans-serif; --mono:"DM Mono",monospace; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ font-family:var(--font); background:var(--void); color:var(--cream); letter-spacing:-0.02em; line-height:1.5; -webkit-font-smoothing:antialiased; padding:56px 26px 100px; }
+  .wrap{ max-width:1180px; margin:0 auto; }
+  .logo{ font-size:26px; font-weight:500; letter-spacing:-0.05em; } .logo span{ color:var(--lime); }
+  .eyebrow{ font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+  h1{ font-weight:400; font-size:clamp(32px,5.5vw,52px); line-height:1.03; letter-spacing:-0.045em; margin:12px 0 14px; }
+  .lede{ font-size:19px; color:#c8c3b2; max-width:66ch; }
+  section{ margin-top:74px; }
+  .sechead{ display:flex; align-items:baseline; gap:14px; border-bottom:1px solid var(--line); padding-bottom:12px; margin-bottom:8px; }
+  h2{ font-weight:500; font-size:25px; letter-spacing:-0.03em; }
+  .sechead .k{ font-family:var(--mono); font-size:11px; color:var(--muted); }
+  h3{ font-weight:500; font-size:19px; margin:28px 0 12px; letter-spacing:-0.02em; }
+  p.body{ font-size:16px; color:#c3bfb0; max-width:74ch; margin-top:10px; }
+  .grid{ display:grid; gap:16px; margin-top:22px; }
+  .g3{ grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); }
+  figure{ background:var(--panel); border-radius:14px; overflow:hidden; border:1px solid #23252e; }
+  figure img{ width:100%; display:block; aspect-ratio:1/1; object-fit:cover; background:#000; }
+  figure.tall img{ aspect-ratio:4/5; }
+  figcaption{ padding:11px 14px 14px; }
+  .cap-t{ font-size:14.5px; } .cap-s{ font-family:var(--mono); font-size:10.5px; color:var(--muted); margin-top:4px; }
+  .badge{ display:inline-block; font-family:var(--mono); font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; padding:2px 8px; border-radius:20px; margin-top:8px; }
+  .badge.std{ background:var(--lime); color:#1a1c22; } .badge.ok{ background:rgba(143,210,143,.18); color:var(--ok); }
+  .badge.no{ background:rgba(224,160,143,.16); color:var(--no); } .badge.edge{ background:rgba(217,180,94,.16); color:var(--gold); }
+  .cols{ display:grid; gap:26px; grid-template-columns:1fr; margin-top:22px; } @media(min-width:820px){ .cols{ grid-template-columns:1fr 1fr; } }
+  .card{ background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:22px 24px; }
+  .card.do{ border-color:rgba(143,210,143,.35); } .card.dont{ border-color:rgba(224,160,143,.32); }
+  .card h4{ font-family:var(--mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:14px; }
+  .card.do h4{ color:var(--ok); } .card.dont h4{ color:var(--no); }
+  ul{ list-style:none; } li{ font-size:15px; color:#cdc9ba; padding:7px 0 7px 22px; position:relative; }
+  li:before{ position:absolute; left:0; top:6px; font-family:var(--mono); font-size:13px; }
+  .do li:before{ content:"+"; color:var(--ok); } .dont li:before{ content:"\00d7"; color:var(--no); }
+  .rule{ background:rgba(227,244,125,.07); border-left:2px solid var(--lime); border-radius:10px; padding:16px 20px; margin-top:18px; font-size:16px; color:var(--warm); }
+  .rule b{ color:#fff; }
+  .spec{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:18px 28px; margin-top:22px; }
+  .spec dt{ font-family:var(--mono); font-size:10.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--muted); margin-bottom:5px; }
+  .spec dd{ font-size:15px; color:var(--cream); }
+  .swatch{ display:inline-block; width:12px; height:12px; border-radius:50%; vertical-align:-1px; margin-right:6px; border:1px solid rgba(255,255,255,.15); }
+  .callout{ margin-top:24px; background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:22px 24px; }
+  .callout .q{ font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); }
+  footer{ margin-top:80px; font-family:var(--mono); font-size:11px; color:var(--muted); text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">pulse<span>·</span></div>
+  <div class="eyebrow" style="margin-top:22px;">Brand system · Design standard v1</div>
+  <p style="margin:8px 0 -2px;"><a href="index.html" style="font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--muted);text-decoration:none;">← Back to the content gallery</a></p>
+  <h1>The Pulse ring &amp; the Pulse ripple.</h1>
+  <p class="lede">One character, rendered identically everywhere. This is the standard every still, film, and render must follow — the object's exact anatomy (now including the motor flat-spot), and the rules for the one branded ripple.</p>
+
+  <!-- THE RING -->
+  <section>
+    <div class="sechead"><h2>1 · The ring</h2><span class="k">exact anatomy</span></div>
+    <p class="body">A wide, low-profile mirror-polished band with a matte ivory-white inner sleeve. The signature the samples were missing: the inner sleeve is <b>not a perfect circle</b> — it has one small <b>flat straight segment</b> where the vibration motor sits. Visible any time you can see into the opening.</p>
+    <div class="grid g3">
+      <figure><img src="img/x_char_gold_top.jpg" alt="Top down gold"><figcaption><div class="cap-t">Top-down · the flat spot</div><div class="cap-s">Inner sleeve flattens at one point</div><span class="badge std">reference</span></figcaption></figure>
+      <figure><img src="img/x_char_silver_top.jpg" alt="Top down silver"><figcaption><div class="cap-t">Silver · same flat spot</div><div class="cap-s">Motor housing</div><span class="badge std">reference</span></figcaption></figure>
+      <figure class="tall"><img src="img/x_char_gold_3q.jpg" alt="3q gold"><figcaption><div class="cap-t">Three-quarter</div><div class="cap-s">Flat spot still reads at an angle</div><span class="badge std">reference</span></figcaption></figure>
+    </div>
+    <dl class="spec">
+      <div><dt>Band</dt><dd>Wide, low-profile, wider than it is thick. Softly rounded edges, gently curved outer wall — never a bulbous dome.</dd></div>
+      <div><dt>Outer surface</dt><dd>One continuous flawless mirror-polished metal. No window, screen, seam, logo, or button.</dd></div>
+      <div><dt>Inner sleeve</dt><dd>Matte ivory-white, at the inner edge only. <b>One flat segment</b> (motor). Never a perfect circle.</dd></div>
+      <div><dt>Colorways</dt><dd><span class="swatch" style="background:linear-gradient(135deg,#e9cf8a,#b8912f)"></span>Champagne gold &nbsp; <span class="swatch" style="background:linear-gradient(135deg,#eceff1,#aab1b5)"></span>Silver / platinum</dd></div>
+      <div><dt>Lighting</dt><dd>The ring is a solid object. It <b>never glows or lights from the inside.</b></dd></div>
+      <div><dt>Never</dt><dd>Thin band · fat dome · dark inset/screen · sensor nub · perfectly round inner sleeve · interior glow.</dd></div>
+    </dl>
+  </section>
+
+  <!-- THE RIPPLE EXPLORATION -->
+  <section>
+    <div class="sechead"><h2>2 · The ripple — exploration</h2><span class="k">6 implementations</span></div>
+    <p class="body">The felt vibration, made visible. Six treatments on the same ring, so the only variable is the ripple. Reference point: the original site's hero, where the whole scene gently ripples like water disturbed by a drop.</p>
+    <div class="grid g3">
+      <figure><img src="img/x_rip_a_rings.jpg" alt="A rings"><figcaption><div class="cap-t">A · Concentric light rings</div><div class="cap-s">Clean warm rings radiate out</div><span class="badge std">the standard — everywhere</span></figcaption></figure>
+      <figure><img src="img/x_rip_e_scenewarp.jpg" alt="E scene"><figcaption><div class="cap-t">E · Scene ripple</div><div class="cap-s">Whole frame waves like a pond</div><span class="badge edge">variant — occasional lifestyle</span></figcaption></figure>
+      <figure><img src="img/x_rip_d_single.jpg" alt="D single"><figcaption><div class="cap-t">D · Single ring</div><div class="cap-s">One clean expanding pulse</div><span class="badge edge">variant — minimal / UI</span></figcaption></figure>
+      <figure><img src="img/x_rip_b_watercaustic.jpg" alt="B water"><figcaption><div class="cap-t">B · Water caustic</div><div class="cap-s">Reads as literal water</div><span class="badge no">rejected</span></figcaption></figure>
+      <figure><img src="img/x_rip_c_shimmer.jpg" alt="C shimmer"><figcaption><div class="cap-t">C · Heat shimmer</div><div class="cap-s">Too faint to read</div><span class="badge no">rejected</span></figcaption></figure>
+      <figure><img src="img/x_rip_f_softbloom.jpg" alt="F bloom"><figcaption><div class="cap-t">F · Soft bloom</div><div class="cap-s">Drifts toward a glow</div><span class="badge edge">boundary — use sparingly</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- THE STANDARD -->
+  <section>
+    <div class="sechead"><h2>3 · The Pulse ripple — the standard</h2><span class="k">the rule</span></div>
+    <div class="rule"><b>The Pulse ripple</b> is warm-gold, translucent, concentric waves that emanate <b>outward from the ring's outer edge</b> and gently ripple the surrounding scene — like the surface of still water disturbed by a single drop. Soft, slow, breathing. It lives <b>around</b> the ring, never inside it.</div>
+    <div class="cols">
+      <div class="card do"><h4>Always</h4><ul class="do">
+        <li>Emanate from the ring's <b>outer edge</b>, expanding outward and fading</li>
+        <li>Warm gold → soft cream (<span class="swatch" style="background:#d9b45e"></span>#D9B45E core, fading to warm light)</li>
+        <li>Concentric and even, like rings on a pond — one clear wave, or a slow set of them</li>
+        <li>Translucent and soft; the scene stays visible <b>through</b> the ripple</li>
+        <li>Let it gently <b>distort/ripple the scene</b> (lifestyle) or the surface (product)</li>
+        <li>In motion: slow, one calm pulse every few seconds — a breath, not a strobe</li>
+      </ul></div>
+      <div class="card dont"><h4>Never</h4><ul class="dont">
+        <li>Glow or emit from <b>inside</b> the ring — the band is never a light source</li>
+        <li>Look like literal water/liquid the ring is sitting in (treatment B)</li>
+        <li>Cool, blue, neon, or electric — it is always warm and organic</li>
+        <li>Harsh, sharp, or high-contrast; no lens-flare fireworks</li>
+        <li>Flood the whole frame with a formless glow (over-bloom, treatment F)</li>
+        <li>Originate from a point or a screen — it is a wave, not a beam</li>
+      </ul></div>
+    </div>
+    <h3>One ripple, everywhere</h3>
+    <p class="body"><b>Treatment A — concentric warm light-rings — is the single Pulse ripple, used in every context</b>, product and lifestyle alike, for maximum brand consistency. The scene-ripple (E) and single-ring (D) are occasional variants of the exact same wave — reach for them only when a specific lifestyle scene or a minimal UI moment calls for it. The idea never changes: warm concentric waves from the ring's outer edge.</p>
+    <div class="callout">
+      <div class="q">Standard locked</div>
+      <p class="body" style="margin-top:8px;">Ripple = <b>treatment A, everywhere</b>. Ring = wide low-profile band, mirror polish, ivory sleeve with the <b>flat motor-spot</b>, never lit from inside. Every ring asset is being re-rendered to this full standard, and the shareable gallery updated.</p>
+    </div>
+  </section>
+
+  <footer>Pulse ring &amp; ripple design standard · v1 · ~/Desktop/Pulse/Ring-Content-Production/design-standard.html</footer>
+</div>
+</body>
+</html>

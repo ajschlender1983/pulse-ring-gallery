@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pulse — Ripple Matrix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+<style>
+  :root{ --void:#0b0c0f; --panel:#141519; --line:#262832; --cream:#EBE7D4; --lime:#E3F47D; --gold:#d9b45e; --muted:#8f8b7e; --font:"DM Sans",sans-serif; --mono:"DM Mono",monospace; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ font-family:var(--font); background:var(--void); color:var(--cream); letter-spacing:-0.02em; line-height:1.5; -webkit-font-smoothing:antialiased; padding:56px 26px 100px; }
+  .wrap{ max-width:1320px; margin:0 auto; }
+  .logo{ font-size:26px; font-weight:500; letter-spacing:-0.05em; } .logo span{ color:var(--lime); }
+  .eyebrow{ font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+  a.back{ font-family:var(--mono); font-size:12.5px; color:var(--muted); text-decoration:none; }
+  h1{ font-weight:400; font-size:clamp(30px,5vw,50px); line-height:1.03; letter-spacing:-0.045em; margin:12px 0 14px; }
+  .lede{ font-size:19px; color:#c8c3b2; max-width:70ch; }
+  .legend{ display:flex; gap:10px 20px; flex-wrap:wrap; margin-top:20px; font-family:var(--mono); font-size:12px; color:var(--muted); }
+  .legend b{ color:var(--cream); font-weight:500; }
+  .scenario{ margin-top:48px; }
+  .scenario h2{ font-weight:500; font-size:20px; letter-spacing:-0.02em; border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:16px; display:flex; align-items:baseline; gap:12px; }
+  .scenario h2 .k{ font-family:var(--mono); font-size:11px; color:var(--muted); margin-left:auto; }
+  .row{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+  @media(min-width:900px){ .row{ grid-template-columns:repeat(4,1fr); } }
+  figure{ background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  figure img{ width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#000; }
+  figcaption{ padding:9px 12px 11px; display:flex; align-items:baseline; gap:8px; }
+  .tag{ font-family:var(--mono); font-size:11px; font-weight:500; color:var(--gold); }
+  .tag.b{ color:#7fbfd8; } .tag.d{ color:#c9c5b6; } .tag.e{ color:#b79ce0; }
+  .cap{ font-size:12.5px; color:var(--muted); }
+  footer{ margin-top:80px; font-family:var(--mono); font-size:11px; color:var(--muted); text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">pulse<span>·</span></div>
+  <div style="margin-top:20px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;">
+    <span class="eyebrow">Brand system · Ripple matrix</span>
+    <a class="back" href="index.html">← content gallery</a>
+  </div>
+  <h1>Same scene. Only the ripple changes.</h1>
+  <p class="lede">Ten scenarios — lifestyle, studio, dramatic, and illustrated — each rendered once as a fixed plate, then re-lit with every ripple treatment. The background, person, and light are held constant so you can judge the ripple on its own.</p>
+  <div class="legend">
+    <span><b style="color:var(--gold)">A</b> concentric rings — the standard</span>
+    <span><b style="color:#7fbfd8">B</b> caustic shimmer — light like sun on water</span>
+    <span><b style="color:#c9c5b6">D</b> single ring — minimal</span>
+    <span><b style="color:#b79ce0">E</b> scene ripple — the whole frame waves</span>
+  </div>
+  <div id="grid"></div>
+  <footer>Ripple matrix · 10 scenarios × 4 treatments · the ripple is the only variable</footer>
+</div>
+<script>
+  var SCEN=[
+    ["s01_cafe","Lifestyle · cafe window"],["s02_couch","Lifestyle · home evening"],
+    ["s03_studio","Studio · editorial"],["s04_dramatic","Dramatic · low-key"],
+    ["s05_street","Outdoor · golden-hour street"],["s06_nature","Outdoor · nature dawn"],
+    ["s07_illustrated","Illustrated · editorial"],["s08_night","Night · window"],
+    ["s09_morning","Intimate · morning"],["s10_desk","Focus · desk"]
+  ];
+  var TREAT=[["A","concentric","tag"],["B","caustic","tag b"],["D","single","tag d"],["E","scene","tag e"]];
+  var grid=document.getElementById('grid');
+  SCEN.forEach(function(s){
+    var sec=document.createElement('div'); sec.className='scenario';
+    var h=document.createElement('h2'); h.textContent=s[1];
+    var k=document.createElement('span'); k.className='k'; k.textContent='ripple as the only variable'; h.appendChild(k);
+    sec.appendChild(h);
+    var row=document.createElement('div'); row.className='row';
+    TREAT.forEach(function(t){
+      var fig=document.createElement('figure');
+      var img=document.createElement('img'); img.src='matrix/'+s[0]+'_'+t[0]+'.jpg'; img.alt=s[1]+' '+t[0]; img.loading='lazy';
+      fig.appendChild(img);
+      var cap=document.createElement('figcaption');
+      var tag=document.createElement('span'); tag.className=t[2]; tag.textContent=t[0];
+      var lab=document.createElement('span'); lab.className='cap'; lab.textContent=t[1];
+      cap.appendChild(tag); cap.appendChild(lab); fig.appendChild(cap);
+      row.appendChild(fig);
+    });
+    sec.appendChild(row); grid.appendChild(sec);
+  });
+</script>
+</body>
+</html>

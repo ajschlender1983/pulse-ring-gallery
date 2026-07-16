@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pulse — The Pulse Language</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+<style>
+  :root{ --void:#0b0c0f; --panel:#141519; --line:#262832; --cream:#EBE7D4; --warm:#F9F6E5; --lime:#E3F47D;
+    --gold:#d9b45e; --muted:#8f8b7e; --font:"DM Sans",sans-serif; --mono:"DM Mono",monospace; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ font-family:var(--font); background:var(--void); color:var(--cream); letter-spacing:-0.02em; line-height:1.5; -webkit-font-smoothing:antialiased; padding:56px 26px 100px; }
+  .wrap{ max-width:1180px; margin:0 auto; }
+  .logo{ font-size:26px; font-weight:500; letter-spacing:-0.05em; } .logo span{ color:var(--lime); }
+  .eyebrow{ font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+  a.back{ font-family:var(--mono); font-size:12.5px; color:var(--muted); text-decoration:none; }
+  h1{ font-weight:400; font-size:clamp(32px,5.5vw,52px); line-height:1.03; letter-spacing:-0.045em; margin:12px 0 14px; }
+  .lede{ font-size:19px; color:#c8c3b2; max-width:66ch; }
+  .states{ margin-top:60px; display:grid; gap:22px; }
+  .state{ display:grid; grid-template-columns:1fr; background:var(--panel); border:1px solid var(--line); border-radius:18px; overflow:hidden; }
+  @media(min-width:760px){ .state{ grid-template-columns:minmax(340px,44%) 1fr; } .state.flip{ direction:rtl; } .state.flip>*{ direction:ltr; } }
+  .state img{ width:100%; height:100%; min-height:300px; object-fit:cover; display:block; background:#000; }
+  .state .body{ padding:34px 36px; align-self:center; }
+  .state .num{ font-family:var(--mono); font-size:11px; letter-spacing:.14em; color:var(--gold); }
+  .state h2{ font-weight:500; font-size:27px; letter-spacing:-0.03em; margin:10px 0 4px; }
+  .state .style{ font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; }
+  .state p{ font-size:16.5px; color:#c9c5b6; max-width:52ch; }
+  .state .moment{ margin-top:16px; font-size:14.5px; color:var(--muted); border-left:2px solid var(--line); padding-left:14px; }
+  footer{ margin-top:80px; font-family:var(--mono); font-size:11px; color:var(--muted); text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">pulse<span>·</span></div>
+  <div style="margin-top:20px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;">
+    <span class="eyebrow">Brand system · The Pulse Language</span>
+    <a class="back" href="index.html">← content gallery</a>
+  </div>
+  <h1>Not every pulse means the same thing.</h1>
+  <p class="lede">One gentle vibration, many meanings. Each Pulse has its own signature ripple — so the wearer feels, without looking, what it's saying. This is the visual language of the pulse: the style, the meaning, and the moment it's made for.</p>
+
+  <div class="states">
+    <div class="state">
+      <img src="img/ps2_loved.jpg" alt="Someone loves you">
+      <div class="body">
+        <div class="num">01 · Connection</div>
+        <h2>Someone you love is thinking of you.</h2>
+        <div class="style">Warm double-pulse · two rings, like a heartbeat</div>
+        <p>They tapped their ring. A world away or a room away, you feel two soft beats — and you know it's them. Presence you can send.</p>
+        <div class="moment">The moment: a partner, a parent, a best friend reaches out without a word.</div>
+      </div>
+    </div>
+    <div class="state flip">
+      <img src="img/ps1_comeback.jpg" alt="Come back">
+      <div class="body">
+        <div class="num">02 · Presence</div>
+        <h2>Come back.</h2>
+        <div class="style">Single soft ring · one clean expanding pulse</div>
+        <p>The everyday nudge. One quiet ring, a few times an hour, drawing you out of the scroll and back into the room you're actually in.</p>
+        <div class="moment">The moment: mid-distraction, gently returned to now.</div>
+      </div>
+    </div>
+    <div class="state">
+      <img src="img/ps3_breathe.jpg" alt="Breathe">
+      <div class="body">
+        <div class="num">03 · Reset</div>
+        <h2>Breathe.</h2>
+        <div class="style">Slow, long ring · one full unhurried breath</div>
+        <p>A single wide wave that expands over the length of one deep breath. Follow it in, follow it out. The nervous system settles.</p>
+        <div class="moment">The moment: stress spikes; one breath brings you down.</div>
+      </div>
+    </div>
+    <div class="state flip">
+      <img src="img/ps4_together.jpg" alt="Here together">
+      <div class="body">
+        <div class="num">04 · Shared presence</div>
+        <h2>Here, together.</h2>
+        <div class="style">Two ripples meeting · synchronized across distance</div>
+        <p>When two people choose the same moment, their rings pulse as one — two waves that meet in the middle. Apart, but present at once.</p>
+        <div class="moment">The moment: a shared pause, held across any distance.</div>
+      </div>
+    </div>
+    <div class="state">
+      <img src="img/ps5_savor.jpg" alt="Savor this">
+      <div class="body">
+        <div class="num">05 · Gratitude</div>
+        <h2>Savor this.</h2>
+        <div class="style">Warm caustic shimmer · light like sun on water</div>
+        <p>Not a nudge to move on — an invitation to stay. A soft golden shimmer that says this ordinary moment is worth another second of your attention.</p>
+        <div class="moment">The moment: coffee, sunlight, a laugh — caught before it passes.</div>
+      </div>
+    </div>
+    <div class="state flip">
+      <img src="img/ps6_focus.jpg" alt="Focus">
+      <div class="body">
+        <div class="num">06 · Purpose</div>
+        <h2>Focus.</h2>
+        <div class="style">Tight, quick rings · crisp and close</div>
+        <p>A sharper, faster pulse for the moments that ask for your whole mind. Not stress — clarity. A tap back to the one thing that matters now.</p>
+        <div class="moment">The moment: scattered attention, gathered to a point.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>The Pulse Language · one vibration, many meanings · every pulse an external ripple, never an interior glow</footer>
+</div>
+</body>
+</html>

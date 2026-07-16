@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pulse — Hero Content, Ripple Series &amp; Cinematic Films</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+<style>
+  :root{ --void:#0b0c0f; --panel:#141519; --cream:#EBE7D4; --warm:#F9F6E5; --lime:#E3F47D;
+    --gold:#d9b45e; --muted:#8f8b7e; --font:"DM Sans",sans-serif; --mono:"DM Mono",monospace; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ font-family:var(--font); background:var(--void); color:var(--cream); letter-spacing:-0.02em;
+    line-height:1.5; -webkit-font-smoothing:antialiased; padding:56px 26px 100px; }
+  .wrap{ max-width:1280px; margin:0 auto; }
+  .logo{ font-size:26px; font-weight:500; letter-spacing:-0.05em; }
+  .logo span{ color:var(--lime); }
+  .eyebrow{ font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+  h1{ font-weight:400; font-size:clamp(32px,5.5vw,54px); line-height:1.02; letter-spacing:-0.045em; margin:12px 0 14px; }
+  .lede{ font-size:19px; color:#c8c3b2; max-width:64ch; }
+  section{ margin-top:72px; }
+  .sechead{ display:flex; align-items:baseline; gap:14px; border-bottom:1px solid #262832; padding-bottom:12px; margin-bottom:26px; }
+  h2{ font-weight:500; font-size:24px; letter-spacing:-0.03em; }
+  .sechead .k{ font-family:var(--mono); font-size:11px; color:var(--muted); }
+  .sechead .c{ margin-left:auto; font-family:var(--mono); font-size:11px; color:var(--muted); }
+  .note{ font-size:15px; color:var(--muted); margin:-14px 0 22px; max-width:70ch; }
+
+  .grid{ display:grid; gap:18px; }
+  .g-hero{ grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); }
+  .g-ripple{ grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); }
+  figure{ background:var(--panel); border-radius:16px; overflow:hidden; border:1px solid #23252e; }
+  figure img{ width:100%; display:block; aspect-ratio:4/5; object-fit:cover; background:#000; }
+  figure.sq img{ aspect-ratio:1/1; object-fit:contain; }
+  figcaption{ padding:12px 15px 15px; }
+  .cap-t{ font-size:15px; color:var(--cream); }
+  .cap-s{ font-family:var(--mono); font-size:10.5px; color:var(--muted); margin-top:4px; text-transform:uppercase; letter-spacing:.08em; }
+
+  .g-vid{ grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); }
+  .vfig{ background:var(--panel); border-radius:16px; overflow:hidden; border:1px solid #23252e; }
+  .vfig video{ width:100%; display:block; aspect-ratio:16/9; background:#000; }
+  .films{ display:grid; gap:26px; grid-template-columns:1fr; }
+  .film{ background:var(--panel); border-radius:18px; overflow:hidden; border:1px solid #23252e; }
+  .film video{ width:100%; display:block; background:#000; aspect-ratio:16/9; }
+  .film .meta{ padding:18px 22px 22px; }
+  .film .theme{ font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); }
+  .film h3{ font-weight:500; font-size:21px; margin:6px 0 6px; letter-spacing:-0.02em; }
+  .film p{ font-size:15px; color:#bdb9aa; max-width:80ch; }
+  @media(min-width:900px){ .films{ grid-template-columns:1fr 1fr; } }
+  footer{ margin-top:80px; font-family:var(--mono); font-size:11px; color:var(--muted); text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">pulse<span>·</span></div>
+  <div class="eyebrow" style="margin-top:22px;">Brand content · Heroes · Beauty · Ripple · Motion · Films</div>
+  <h1>One pulse brings you back.</h1>
+  <p class="lede">Hyper-real hero portraits, ring beauty stills, the signature pulse-ripple series, cinematic spin &amp; pulse motion, and transformation films across the moments Pulse is made for — pleasure and gratitude, connection, and purpose.</p>
+
+  <section>
+    <div class="sechead"><h2>Hero portraits &amp; product</h2><span class="k">diverse · dramatic · photoreal</span></div>
+    <p class="note">Each portrait carries one of the three themes, with the ring's true finishing dimensions preserved.</p>
+    <div class="grid g-hero">
+      <figure><img src="img/h1_gratitude_woman.jpg" alt="Gratitude"><figcaption><div class="cap-t">A moment of gratitude</div><div class="cap-s">Silver · stillness</div></figcaption></figure>
+      <figure><img src="img/h4_pleasure_youngman.jpg" alt="Pleasure"><figcaption><div class="cap-t">Simple pleasure, golden hour</div><div class="cap-s">Gold · joy</div></figcaption></figure>
+      <figure><img src="img/h8_reset_man.jpg" alt="Reset"><figcaption><div class="cap-t">One breath, and reset</div><div class="cap-s">Gold · purpose</div></figcaption></figure>
+      <figure><img src="img/h5_connection_couple.jpg" alt="Connection"><figcaption><div class="cap-t">Back to each other</div><div class="cap-s">Gold + silver · connection</div></figcaption></figure>
+      <figure><img src="img/h6_family_mother.jpg" alt="Family"><figcaption><div class="cap-t">Fully here for them</div><div class="cap-s">Silver · family</div></figcaption></figure>
+      <figure><img src="img/h2_purpose_man.jpg" alt="Purpose"><figcaption><div class="cap-t">Hand on heart</div><div class="cap-s">Gold · purpose</div></figcaption></figure>
+      <figure><img src="img/h3_presence_elder.jpg" alt="Presence"><figcaption><div class="cap-t">Present with the morning</div><div class="cap-s">Silver · gratitude</div></figcaption></figure>
+      <figure><img src="img/h7_product_hero_macro.jpg" alt="Hero product"><figcaption><div class="cap-t">The ring, up close</div><div class="cap-s">Gold · hero product</div></figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>Ring beauty — hero stills</h2><span class="k">the object, ten ways</span></div>
+    <p class="note">Pure product beauty across colorways, surfaces, and light — void, wet stone, silk, glass, marble, backlit, and pulse.</p>
+    <div class="grid g-ripple">
+      <figure class="sq"><img src="img/b1_gold_float_void.jpg" alt="Gold float"><figcaption><div class="cap-t">Suspended in void</div><div class="cap-s">Gold · float</div></figcaption></figure>
+      <figure class="sq"><img src="img/b2_silver_float_void.jpg" alt="Silver float"><figcaption><div class="cap-t">Suspended in void</div><div class="cap-s">Silver · float</div></figcaption></figure>
+      <figure><img src="img/b3_gold_wet_stone.jpg" alt="Gold wet stone"><figcaption><div class="cap-t">On wet stone</div><div class="cap-s">Gold · reflection</div></figcaption></figure>
+      <figure><img src="img/b4_silver_silk.jpg" alt="Silver silk"><figcaption><div class="cap-t">On champagne silk</div><div class="cap-s">Silver · luxe</div></figcaption></figure>
+      <figure class="sq"><img src="img/b5_gold_pulse_beauty.jpg" alt="Gold pulse"><figcaption><div class="cap-t">The pulse, radiating</div><div class="cap-s">Gold · pulse</div></figcaption></figure>
+      <figure class="sq"><img src="img/b6_silver_pulse_beauty.jpg" alt="Silver pulse"><figcaption><div class="cap-t">One ring of light</div><div class="cap-s">Silver · pulse</div></figcaption></figure>
+      <figure><img src="img/b7_gold_glass.jpg" alt="Gold glass"><figcaption><div class="cap-t">On glass, high-key</div><div class="cap-s">Gold · bright</div></figcaption></figure>
+      <figure><img src="img/b8_silver_marble.jpg" alt="Silver marble"><figcaption><div class="cap-t">On marble</div><div class="cap-s">Silver · editorial</div></figcaption></figure>
+      <figure><img src="img/b9_gold_backlit.jpg" alt="Gold backlit"><figcaption><div class="cap-t">Backlit halo</div><div class="cap-s">Gold · dramatic</div></figcaption></figure>
+      <figure class="sq"><img src="img/b10_duo_float.jpg" alt="Duo float"><figcaption><div class="cap-t">Gold &amp; silver, together</div><div class="cap-s">Duo · float</div></figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>The Pulse — ripple series</h2><span class="k">the vibration, made visible</span></div>
+    <p class="note">The signature verb of the brand: a single warm pulse rippling outward — the felt moment of return.</p>
+    <div class="grid g-ripple">
+      <figure><img src="img/r1_macro_ripple.jpg" alt="Macro ripple"><figcaption><div class="cap-t">The pulse, radiating</div><div class="cap-s">Gold · macro</div></figcaption></figure>
+      <figure class="sq"><img src="img/r3_water_light.jpg" alt="Water light ripple"><figcaption><div class="cap-t">Rings of light on water</div><div class="cap-s">Silver · top-down</div></figcaption></figure>
+      <figure><img src="img/r2_skin_ripple.jpg" alt="Skin ripple"><figcaption><div class="cap-t">Across the skin</div><div class="cap-s">Silver · felt</div></figcaption></figure>
+      <figure><img src="img/r4_heart_pulse.jpg" alt="Heart pulse"><figcaption><div class="cap-t">A pulse at the heart</div><div class="cap-s">Gold · intimate</div></figcaption></figure>
+      <figure class="sq"><img src="img/r5_one_pulse.jpg" alt="One pulse"><figcaption><div class="cap-t">One pulse</div><div class="cap-s">Silver · minimal</div></figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>Ring in motion — spin &amp; pulse</h2><span class="k">cinematic beauty loops</span></div>
+    <p class="note">The object alone: slow luxurious rotation and rhythmic pulses of light. No people, just the ring.</p>
+    <div class="grid g-vid">
+      <div class="vfig"><video controls preload="metadata" poster="img/b1_gold_float_void.jpg" src="ring-videos/v1_spin_gold.mp4"></video><figcaption><div class="cap-t">Gold, slow spin</div><div class="cap-s">Beauty · rotation</div></figcaption></div>
+      <div class="vfig"><video controls preload="metadata" poster="img/b2_silver_float_void.jpg" src="ring-videos/v2_spin_silver.mp4"></video><figcaption><div class="cap-t">Silver, slow spin</div><div class="cap-s">Beauty · rotation</div></figcaption></div>
+      <div class="vfig"><video controls preload="metadata" poster="img/b5_gold_pulse_beauty.jpg" src="ring-videos/v3_pulse_gold.mp4"></video><figcaption><div class="cap-t">Gold, pulsing light</div><div class="cap-s">Beauty · pulse</div></figcaption></div>
+      <div class="vfig"><video controls preload="metadata" poster="img/r3_water_light.jpg" src="ring-videos/v4_pulse_water_silver.mp4"></video><figcaption><div class="cap-t">Silver, rings on water</div><div class="cap-s">Beauty · pulse</div></figcaption></div>
+      <div class="vfig"><video controls preload="metadata" poster="img/b10_duo_float.jpg" src="ring-videos/v5_spin_pulse_duo.mp4"></video><figcaption><div class="cap-t">Duo, spin &amp; pulse</div><div class="cap-s">Beauty · rotation + pulse</div></figcaption></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>Cinematic films</h2><span class="k">distracted → one pulse → back</span></div>
+    <p class="note">Each film runs the same arc: a person elsewhere, a push into the ring, one warm pulse, and the pull-back that reveals them returned — to a taste, a face, a breath, themselves.</p>
+    <div class="films">
+      <div class="film"><video controls preload="metadata" poster="posters/c1_pleasure_start.jpg" src="clips/c1_pleasure.mp4"></video><div class="meta"><div class="theme">Pleasure &amp; gratitude</div><h3>The coffee, actually tasted</h3><p>Hunched over a phone, coffee going cold. One pulse, and she sets the phone down and savors it.</p></div></div>
+      <div class="film"><video controls preload="metadata" poster="posters/c2_connection_start.jpg" src="clips/c2_connection.mp4"></video><div class="meta"><div class="theme">Connection</div><h3>Back to each other</h3><p>A child reaching for attention that isn't there. One pulse, and the phone lowers, eyes meet, a hand finds a small cheek.</p></div></div>
+      <div class="film"><video controls preload="metadata" poster="posters/c3_purpose_start.jpg" src="clips/c3_purpose.mp4"></video><div class="meta"><div class="theme">Purpose &amp; reset</div><h3>One breath, back to center</h3><p>Overwhelmed at a desk of glowing screens. One pulse, one deep breath, and the scatter resolves into calm.</p></div></div>
+      <div class="film"><video controls preload="metadata" poster="posters/c4_gratitude_commute_start.jpg" src="clips/c4_gratitude_commute.mp4"></video><div class="meta"><div class="theme">Gratitude</div><h3>The world outside the window</h3><p>Numb on a gray commute, lost in a phone. One pulse, and she looks up into the light with a quiet, grateful smile.</p></div></div>
+      <div class="film"><video controls preload="metadata" poster="posters/c5_connection_dinner_start.jpg" src="clips/c5_connection_dinner.mp4"></video><div class="meta"><div class="theme">Connection</div><h3>Reaching across the table</h3><p>A phone under the table while dinner waits. One pulse, and it's set aside — a hand reaches across, eyes meet.</p></div></div>
+      <div class="film"><video controls preload="metadata" poster="posters/c6_purpose_artist_start.jpg" src="clips/c6_purpose_artist.mp4"></video><div class="meta"><div class="theme">Purpose &amp; reset</div><h3>Back to the canvas</h3><p>Stuck and frustrated before the work. One pulse, one breath, and she lifts the brush with clear, calm focus.</p></div></div>
+    </div>
+  </section>
+
+  <footer>Pulse content production · 18 stills · 5 beauty motion loops · 6 films · ring finishing dimensions preserved</footer>
+</div>
+</body>
+</html>

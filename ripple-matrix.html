@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pulse — Ripple Matrix</title>
+<title>Pulse — The Ripple, in Use</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
@@ -17,19 +17,15 @@
   a.back{ font-family:var(--mono); font-size:12.5px; color:var(--muted); text-decoration:none; }
   h1{ font-weight:400; font-size:clamp(30px,5vw,50px); line-height:1.03; letter-spacing:-0.045em; margin:12px 0 14px; }
   .lede{ font-size:19px; color:#c8c3b2; max-width:70ch; }
-  .legend{ display:flex; gap:10px 20px; flex-wrap:wrap; margin-top:20px; font-family:var(--mono); font-size:12px; color:var(--muted); }
-  .legend b{ color:var(--cream); font-weight:500; }
-  .scenario{ margin-top:48px; }
-  .scenario h2{ font-weight:500; font-size:20px; letter-spacing:-0.02em; border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:16px; display:flex; align-items:baseline; gap:12px; }
-  .scenario h2 .k{ font-family:var(--mono); font-size:11px; color:var(--muted); margin-left:auto; }
-  .row{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
-  @media(min-width:900px){ .row{ grid-template-columns:repeat(4,1fr); } }
+  h2{ font-weight:500; font-size:21px; letter-spacing:-0.02em; border-bottom:1px solid var(--line); padding-bottom:10px; margin:52px 0 18px; }
+  .grid{ display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); }
+  .grid.tall{ grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); }
   figure{ background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
   figure img{ width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#000; }
-  figcaption{ padding:9px 12px 11px; display:flex; align-items:baseline; gap:8px; }
-  .tag{ font-family:var(--mono); font-size:11px; font-weight:500; color:var(--gold); }
-  .tag.b{ color:#7fbfd8; } .tag.d{ color:#c9c5b6; } .tag.e{ color:#b79ce0; }
-  .cap{ font-size:12.5px; color:var(--muted); }
+  .tall figure img{ aspect-ratio:4/5; }
+  figcaption{ padding:10px 13px 12px; }
+  .cap{ font-size:13.5px; color:var(--cream); }
+  .cap-s{ font-family:var(--mono); font-size:10.5px; color:var(--muted); margin-top:3px; text-transform:uppercase; letter-spacing:.07em; }
   footer{ margin-top:80px; font-family:var(--mono); font-size:11px; color:var(--muted); text-align:center; }
 </style>
 </head>
@@ -37,19 +33,26 @@
 <div class="wrap">
   <div class="logo">pulse<span>·</span></div>
   <div style="margin-top:20px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;">
-    <span class="eyebrow">Brand system · Ripple matrix</span>
+    <span class="eyebrow">Brand system · the ripple, in use</span>
     <a class="back" href="index.html">← content gallery</a>
   </div>
-  <h1>Same scene. Only the ripple changes.</h1>
-  <p class="lede">Ten scenarios — lifestyle, studio, dramatic, and illustrated — each rendered once as a fixed plate, then re-lit with every ripple treatment. The background, person, and light are held constant so you can judge the ripple on its own.</p>
-  <div class="legend">
-    <span><b style="color:var(--gold)">A</b> concentric rings — the standard</span>
-    <span><b style="color:#7fbfd8">B</b> caustic shimmer — light like sun on water</span>
-    <span><b style="color:#c9c5b6">D</b> single ring — minimal</span>
-    <span><b style="color:#b79ce0">E</b> scene ripple — the whole frame waves</span>
+  <h1>One ripple, every moment.</h1>
+  <p class="lede">The Pulse ripple — a soft glow at the ring, one brighter ring of light, gentle waves spreading coplanar from its edge — always on a hand, across the moments Pulse lives in.</p>
+
+  <h2>Worn moments</h2>
+  <div class="grid tall">
+    <figure><img src="heroes-ripples/r2_skin_ripple.png" alt="Across the skin"><figcaption><div class="cap">Across the skin</div><div class="cap-s">Silver · felt</div></figcaption></figure>
+    <figure><img src="heroes-ripples/r4_heart_pulse.png" alt="A pulse at the heart"><figcaption><div class="cap">A pulse at the heart</div><div class="cap-s">Gold · intimate</div></figcaption></figure>
+    <figure><img src="heroes-ripples/r1_macro_ripple.png" alt="At the fingertip"><figcaption><div class="cap">At the fingertip</div><div class="cap-s">Gold · macro</div></figcaption></figure>
+    <figure><img src="heroes-ripples/ps2_loved.png" alt="Someone is thinking of you"><figcaption><div class="cap">Someone is thinking of you</div><div class="cap-s">Gold · double pulse</div></figcaption></figure>
+    <figure><img src="heroes-ripples/ps4_together.png" alt="Here together"><figcaption><div class="cap">Here, together</div><div class="cap-s">Duo · two ripples meet</div></figcaption></figure>
+    <figure><img src="heroes-ripples/ps5_savor.png" alt="Savor this"><figcaption><div class="cap">Savor this</div><div class="cap-s">Gold · lingering</div></figcaption></figure>
   </div>
-  <div id="grid"></div>
-  <footer>Ripple matrix · 10 scenarios × 4 treatments · the ripple is the only variable</footer>
+
+  <h2>In the scene</h2>
+  <div class="grid" id="scenes"></div>
+
+  <footer>The ripple, in use · always on a hand · glow → one bright ring → soft coplanar waves</footer>
 </div>
 <script>
   var SCEN=[
@@ -59,25 +62,15 @@
     ["s07_illustrated","Illustrated · editorial"],["s08_night","Night · window"],
     ["s09_morning","Intimate · morning"],["s10_desk","Focus · desk"]
   ];
-  var TREAT=[["A","concentric","tag"],["B","caustic","tag b"],["D","single","tag d"],["E","scene","tag e"]];
-  var grid=document.getElementById('grid');
+  var grid=document.getElementById('scenes');
   SCEN.forEach(function(s){
-    var sec=document.createElement('div'); sec.className='scenario';
-    var h=document.createElement('h2'); h.textContent=s[1];
-    var k=document.createElement('span'); k.className='k'; k.textContent='ripple as the only variable'; h.appendChild(k);
-    sec.appendChild(h);
-    var row=document.createElement('div'); row.className='row';
-    TREAT.forEach(function(t){
-      var fig=document.createElement('figure');
-      var img=document.createElement('img'); img.src='matrix/'+s[0]+'_'+t[0]+'.jpg'; img.alt=s[1]+' '+t[0]; img.loading='lazy';
-      fig.appendChild(img);
-      var cap=document.createElement('figcaption');
-      var tag=document.createElement('span'); tag.className=t[2]; tag.textContent=t[0];
-      var lab=document.createElement('span'); lab.className='cap'; lab.textContent=t[1];
-      cap.appendChild(tag); cap.appendChild(lab); fig.appendChild(cap);
-      row.appendChild(fig);
-    });
-    sec.appendChild(row); grid.appendChild(sec);
+    var fig=document.createElement('figure');
+    var img=document.createElement('img'); img.src='matrix/'+s[0]+'_n4.jpg'; img.alt=s[1]; img.loading='lazy';
+    fig.appendChild(img);
+    var cap=document.createElement('figcaption');
+    var l=document.createElement('div'); l.className='cap'; l.textContent=s[1];
+    cap.appendChild(l); fig.appendChild(cap);
+    grid.appendChild(fig);
   });
 </script>
 </body>

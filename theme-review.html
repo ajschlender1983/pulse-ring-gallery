@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pulse — New Ripple · pick the variation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+<style>
+  :root{ --void:#0b0c0f; --panel:#141519; --line:#262832; --cream:#EBE7D4; --lime:#E3F47D; --gold:#d9b45e; --muted:#8f8b7e; --font:"DM Sans",sans-serif; --mono:"DM Mono",monospace; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ font-family:var(--font); background:var(--void); color:var(--cream); letter-spacing:-0.02em; line-height:1.5; -webkit-font-smoothing:antialiased; padding:56px 26px 100px; }
+  .wrap{ max-width:1180px; margin:0 auto; }
+  .logo{ font-size:26px; font-weight:500; letter-spacing:-0.05em; } .logo span{ color:var(--lime); }
+  .eyebrow{ font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+  a.back{ font-family:var(--mono); font-size:12.5px; color:var(--muted); text-decoration:none; }
+  h1{ font-weight:400; font-size:clamp(30px,5vw,50px); line-height:1.03; letter-spacing:-0.045em; margin:12px 0 14px; }
+  .lede{ font-size:19px; color:#c8c3b2; max-width:70ch; }
+  h2{ font-weight:500; font-size:22px; letter-spacing:-0.03em; border-bottom:1px solid var(--line); padding-bottom:10px; margin:52px 0 20px; }
+  .grid{ display:grid; gap:16px; grid-template-columns:repeat(2,1fr); }
+  @media(min-width:820px){ .grid.four{ grid-template-columns:repeat(4,1fr); } }
+  figure{ background:var(--panel); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+  figure img{ width:100%; aspect-ratio:1/1; object-fit:cover; display:block; background:#000; }
+  figure.wide img{ aspect-ratio:16/9; }
+  figcaption{ padding:13px 15px 16px; }
+  .n{ font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--gold); }
+  .t{ font-size:16px; margin:5px 0 3px; } .d{ font-size:13.5px; color:var(--muted); }
+  .rec{ display:inline-block; font-family:var(--mono); font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; background:var(--lime); color:#1a1c22; padding:2px 8px; border-radius:20px; margin-top:9px; }
+  footer{ margin-top:70px; font-family:var(--mono); font-size:11px; color:var(--muted); text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">pulse<span>·</span></div>
+  <div style="margin-top:20px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;">
+    <span class="eyebrow">New ripple · pick the variation</span>
+    <a class="back" href="index.html">← content gallery</a>
+  </div>
+  <h1>One pulse: glow → diffuse → ripple.</h1>
+  <p class="lede">The new direction, replacing concentric and caustic: the pulse originates as a single soft glow centered on the ring, expands and diffuses, then continues rippling outward. Always centered on the ring. Four variations at different points in that one motion — pick the one that is the Pulse.</p>
+
+  <h2>The variation — on the ring</h2>
+  <div class="grid four">
+    <figure><img src="img/tn1_glow.jpg" alt="glow"><figcaption><div class="n">tn1</div><div class="t">Glow</div><div class="d">Just the origin — a soft centered bloom.</div></figcaption></figure>
+    <figure><img src="img/tn2_diffuse.jpg" alt="diffuse"><figcaption><div class="n">tn2</div><div class="t">Diffuse</div><div class="d">The glow expands into a broad soft halo.</div></figcaption></figure>
+    <figure><img src="img/tn3_ripple.jpg" alt="ripple"><figcaption><div class="n">tn3</div><div class="t">Ripple</div><div class="d">Diffuses, then one soft outward wave.</div></figcaption></figure>
+    <figure><img src="img/tn4_full.jpg" alt="full"><figcaption><div class="n">tn4</div><div class="t">Full journey</div><div class="d">Glow → diffuse → wavy ripple, all in one.</div><span class="rec">recommended</span></figcaption></figure>
+  </div>
+
+  <h2>The same variation — in a scene</h2>
+  <div class="grid four">
+    <figure class="wide"><img src="matrix/s01_cafe_n1.jpg" alt="n1"><figcaption><div class="n">n1 · glow</div></figcaption></figure>
+    <figure class="wide"><img src="matrix/s01_cafe_n2.jpg" alt="n2"><figcaption><div class="n">n2 · diffuse</div></figcaption></figure>
+    <figure class="wide"><img src="matrix/s01_cafe_n3.jpg" alt="n3"><figcaption><div class="n">n3 · ripple</div></figcaption></figure>
+    <figure class="wide"><img src="matrix/s01_cafe_n4.jpg" alt="n4"><figcaption><div class="n">n4 · full</div></figcaption></figure>
+  </div>
+
+  <footer>New Pulse ripple · glow → diffuse → ripple · always centered on the ring · concentric &amp; caustic retired</footer>
+</div>
+</body>
+</html>

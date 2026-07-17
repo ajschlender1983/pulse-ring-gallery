@@ -40,16 +40,13 @@
     <span class="eyebrow">Brand system · Ripple matrix</span>
     <a class="back" href="index.html">← content gallery</a>
   </div>
-  <h1>Same scene. Only the ripple changes.</h1>
-  <p class="lede">Ten scenarios — lifestyle, studio, dramatic, and illustrated — each rendered once as a fixed plate, then re-lit with every ripple treatment. The background, person, and light are held constant so you can judge the ripple on its own.</p>
+  <h1>The Pulse, in every scene.</h1>
+  <p class="lede">The one standard pulse — a soft glow that diffuses and ripples outward, centered on the ring — across ten scenarios: lifestyle, studio, dramatic, outdoor, and illustrated. Same pulse, many rooms. (Concentric rings and caustics were explored and retired.)</p>
   <div class="legend">
-    <span><b style="color:var(--gold)">A</b> concentric rings — the standard</span>
-    <span><b style="color:#7fbfd8">B</b> caustic shimmer — light like sun on water</span>
-    <span><b style="color:#c9c5b6">D</b> single ring — minimal</span>
-    <span><b style="color:#b79ce0">E</b> scene ripple — the whole frame waves</span>
+    <span><b style="color:var(--gold)">✦</b> glow → diffuse → ripple, always centered on the ring</span>
   </div>
-  <div id="grid"></div>
-  <footer>Ripple matrix · 10 scenarios × 4 treatments · the ripple is the only variable</footer>
+  <div id="grid" class="row" style="margin-top:26px;"></div>
+  <footer>The Pulse in every scene · one standard pulse · glow → diffuse → ripple, centered on the ring</footer>
 </div>
 <script>
   var SCEN=[
@@ -59,25 +56,15 @@
     ["s07_illustrated","Illustrated · editorial"],["s08_night","Night · window"],
     ["s09_morning","Intimate · morning"],["s10_desk","Focus · desk"]
   ];
-  var TREAT=[["A","concentric","tag"],["B","caustic","tag b"],["D","single","tag d"],["E","scene","tag e"]];
   var grid=document.getElementById('grid');
   SCEN.forEach(function(s){
-    var sec=document.createElement('div'); sec.className='scenario';
-    var h=document.createElement('h2'); h.textContent=s[1];
-    var k=document.createElement('span'); k.className='k'; k.textContent='ripple as the only variable'; h.appendChild(k);
-    sec.appendChild(h);
-    var row=document.createElement('div'); row.className='row';
-    TREAT.forEach(function(t){
-      var fig=document.createElement('figure');
-      var img=document.createElement('img'); img.src='matrix/'+s[0]+'_'+t[0]+'.jpg'; img.alt=s[1]+' '+t[0]; img.loading='lazy';
-      fig.appendChild(img);
-      var cap=document.createElement('figcaption');
-      var tag=document.createElement('span'); tag.className=t[2]; tag.textContent=t[0];
-      var lab=document.createElement('span'); lab.className='cap'; lab.textContent=t[1];
-      cap.appendChild(tag); cap.appendChild(lab); fig.appendChild(cap);
-      row.appendChild(fig);
-    });
-    sec.appendChild(row); grid.appendChild(sec);
+    var fig=document.createElement('figure');
+    var img=document.createElement('img'); img.src='matrix/'+s[0]+'_n4.jpg'; img.alt=s[1]; img.loading='lazy';
+    fig.appendChild(img);
+    var cap=document.createElement('figcaption');
+    var lab=document.createElement('span'); lab.className='cap'; lab.textContent=s[1];
+    cap.appendChild(lab); fig.appendChild(cap);
+    grid.appendChild(fig);
   });
 </script>
 </body>
